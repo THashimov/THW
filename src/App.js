@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
-import LandingPageVideo from './commonComponents/landingPageVideo';
+import Home from './components/home';
 
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path = '/'
-        element = {<LandingPageVideo />}>
+        element = {<Home />}>
           </Route>
       </Routes>
     </BrowserRouter>

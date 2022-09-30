@@ -1,0 +1,40 @@
+/* -- -- -- -- -- -- -- -- -- Video -- -- -- -- -- -- -- -- -- */
+
+.headerContainer video {
+    position: relative;
+    width: 100vw;
+    object-fit: fill;
+    bottom: 25%;
+    z-index: -100;
+}
+
+/* -- -- -- -- -- -- -- -- -- Homepage Logo -- -- -- -- -- -- -- -- -- */
+
+.headerLogo {
+    position: absolute;
+    width: 100%;
+}
+
+.headerLogo img {
+    width: 70%;
+}
+
+
+.headerLogo a {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .headerContainer video {
+        bottom: 5% !important;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .headerContainer video {
+        bottom: 15%;
+    }
+}

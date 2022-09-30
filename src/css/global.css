@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Serif';
+    overflow-x: hidden;
+}
+
+.videoContainer {
+    position: absolute;
+    left: 0;
+    bottom: 25%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: fill;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.videoContainer video {
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .videoContainer {
+        bottom: 5% !important;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .videoContainer {
+        bottom: 15%;
+    }
+}

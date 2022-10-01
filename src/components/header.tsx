@@ -13,7 +13,7 @@ const Header: React.FC<headerProps> = () => {
                 <img src={Logo} alt="" />
             </Link>
             </div>
-            <video autoPlay loop muted>
+            <video >
                 <source  src={Video} type='video/mp4' />
             </video>
         </div>

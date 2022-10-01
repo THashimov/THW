@@ -1,3 +1,4 @@
+import ContactUs from "./contactUs";
 import Header from "./header";
 import LandingPageContent from './landingPageContent';
 
@@ -9,6 +10,7 @@ const Home: React.FC<HomeProps> = () => {
     return ( <div className="home">
         <Header />
         <LandingPageContent />
+        <ContactUs />
     </div> );
 }
  

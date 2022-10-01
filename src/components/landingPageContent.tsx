@@ -7,11 +7,17 @@ interface LandingPageContentProps {
 }
  
 const LandingPageContent: React.FC<LandingPageContentProps> = () => {
+    let contentCards: React.ReactElement [] = [];
+
+    for (let i = 0; i < Data.content.length; i++) {
+        contentCards.push(<ContentCard content={Data.content[i]} key={i} />)
+    }
+
     return (
     <div className="landingPageContent">
         <h1>Specialist Pipe Welding</h1>
         <div className="contentCardsContainer">
-        <ContentCard content={Data.content}/>
+        {contentCards}
         </div>
     </div> 
     

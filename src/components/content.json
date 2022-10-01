@@ -1,0 +1,19 @@
+{
+    "content": [
+        {
+        "title": "Pipe Welding",
+        "body": "THW is a leading provider of mechanical engineering services, working predominantly in the food, dairy, EfW and pharmaceutical industries.",
+        "imgSrc": "assets/dairyValveWeld.JPEG"
+        },
+        {
+        "title": "Fabrication",
+        "body": "With a team of talented fabricators, THW can fabricate bespoke components such as seagull tees, swept tees, headers and pipe spools.",
+        "imgSrc": "assets/seagullTee.jpg"
+        },
+        {
+        "title": "Installation",
+        "body": "THW is fully mobile ready with a team of welders and fitters ready to go anywhere across the UK and EU to weld, fabricate and install on-site.",
+        "imgSrc": "assets/huber.jpg"
+        }
+    ]
+}

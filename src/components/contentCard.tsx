@@ -1,19 +1,24 @@
-import React from "react";
-import DairyValveWeld from '../assets/dairyValveWeld.JPEG';
-
+import React, { useEffect, useState } from "react";
 
 interface ContentCardProps {
-    
+    content: {title: string, body: string, imgSrc: string} [];
 }
  
-const ContentCard: React.FC<ContentCardProps> = () => {
+const ContentCard: React.FC<ContentCardProps> = (prop) => {
+    const x = prop.content.map((title) => {title});
+
+    console.log(x)
     return ( 
         <div className="contentCard">
-            <img src={DairyValveWeld} alt='' ></img>
+            {prop.content.map((content) => {
                 <div className="cardsText">
-                <h1>Pipe Welding</h1>
-                <p>THW is a leading provider of mechanical engineering services, working predominantly in the food, dairy, EfW and pharmaceutical industries.</p>
-            </div>
+            })}
+            
+            {/* <img src={prop.content.imgSrc} alt='' ></img>
+                <div className="cardsText">
+                <h1>{prop.content.title}</h1>
+                <p>{prop.content.body}</p>
+            </div> */}
         </div>
      );
 }

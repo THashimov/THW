@@ -7,3 +7,25 @@
     font-family: 'Noto Serif';
     overflow-x: hidden;
 }
+
+:root {
+    --customBlue: #2B2E83;
+    --customGrey: #c2bebe;
+}
+
+input:focus {
+    outline: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+input {
+    border: none;
+}
+
+textarea {
+    resize: none;
+    border: none;
+}

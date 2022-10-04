@@ -4,13 +4,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #c2bebe;
+    background-color: var(--customGrey);
 }
 
 .home h1 {
     text-align: center;
     padding-bottom: 1rem;
-    color: #2B2E83;
+    color: var(--customBlue);
 }
 
 .landingPageContent {
@@ -40,7 +40,7 @@
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    color: #2B2E83;
+    color: var(--customBlue);
 }
 
 .contentCard img {
@@ -51,9 +51,88 @@
     border-radius: 50%;
 }
 
-/* -- -- -- -- -- -- -- -- Contact Form -- -- -- -- -- -- -- --  */
+/* -- -- -- -- -- -- -- -- Contact Us Container -- -- -- -- -- -- -- --  */
+
+.contactContainer {
+    display: flex;
+    width: 90%;
+    padding-bottom: 5rem;
+    height: 30rem;
+}
+
+/* -- -- -- -- -- -- -- -- Contact Form Container -- -- -- -- -- -- -- --  */
+
+
+.formContainer h1,
+.contactInfoContainer h1 {
+    font-size: 20px;
+    text-align: left;
+    overflow: hidden;
+}
+
+.formContainer {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.formContainer button {
+    width: 7rem;
+    border: none;
+    background-color: var(--customBlue);
+    padding: 0.5rem;
+    color: var(--customGrey);
+    overflow: hidden;
+}
+
+
+/* -- -- -- -- -- -- -- -- Form -- -- -- -- -- -- -- --  */
 
 #contactForm {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    width: 100%;
+    overflow: hidden;
+    height: 65%;
+}
+
+#contactForm input {
+    padding-left: 10px;
+    height: 2rem;
+    width: 48%;
+}
+
+#contactForm textarea {
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 0.2rem;
+    height: 10rem;
+}
+
+
+#contactForm input,
+#contactForm textarea,
+.formContainer button {
+    border-radius: 10px;
+}
+
+/* -- -- -- -- -- -- -- -- Contact info -- -- -- -- -- -- -- --  */
+
+
+.contactInfoContainer {
+    margin-left: auto;
+    width: 40%;
+    text-align: left;
+}
+
+.contactInfoContainer p {
+    padding-top: 1rem;
 }
 
 @media (max-width: 1100px) {
@@ -74,8 +153,32 @@
     }
 }
 
+/* -- -- -- -- -- -- -- -- Footer -- -- -- -- -- -- -- --  */
+
+footer {
+    width: 100vw;
+    height: 2rem;
+    background-color: black;
+}
+
 @media (max-width: 450px) {
     .contentCard img {
         width: 80%;
+    }
+
+    #contactForm input {
+        width: 100%;
+    }
+
+    .contactContainer {
+        height: 40rem;
+    }
+
+    .formContainer {
+        align-items: center;
+    }
+
+    .formContainer h1 {
+        text-align: center;
     }
 }

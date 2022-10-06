@@ -1,12 +1,12 @@
 import ContactForm from "./contactForm";
 
 interface ContactUsProps {
-    
+    messageState: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
 }
  
-const ContactUs: React.FC<ContactUsProps> = () => {
+const ContactUs: React.FC<ContactUsProps> = (prop) => {
     const handleClick = () => {
-        console.log("clicked")
+        prop.messageState[0] ? prop.messageState[1](false) : prop.messageState[1](true)
     }
 
     return (

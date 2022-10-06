@@ -4,7 +4,7 @@ interface MessageSentProps {
  
 const MessageSent: React.FC<MessageSentProps> = () => {
     return (
-        <h1>Message has been sent, thank you!</h1>
+        <h1>Message has been sent, Thank You!</h1>
       );
 }
  

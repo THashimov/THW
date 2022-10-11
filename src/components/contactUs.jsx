@@ -1,19 +1,34 @@
 import ContactForm from "./contactForm";
+import emailjs from 'emailjs-com';
+import EmailClass from './emailClass';
+import { useRef } from "react";
 
-interface ContactUsProps {
-    messageState: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
-}
- 
-const ContactUs: React.FC<ContactUsProps> = (prop) => {
+const ContactUs = (prop) => {
+    const formDetails = useRef(new EmailClass());
+
     const handleClick = () => {
-        prop.messageState[0] ? prop.messageState[1](false) : prop.messageState[1](true)
+        prop.messageState[0] ? prop.messageState[1](false) : prop.messageState[1](true);
+
+    const params = {
+        user_name: formDetails.current.userName,
+        user_email: formDetails.current.userEmail,
+        user_phone: formDetails.current.userPhone,
+        message: formDetails.current.message,
+    };
+    
+        emailjs.send(
+            process.env.REACT_APP_SERVICE_ID, 
+            process.env.REACT_APP_TEMPLATE_ID, 
+            params, 
+            process.env.REACT_APP_PUBLIC_KEY
+            );
     }
 
     return (
         <div className="contactContainer">
             <div className="formContainer">
                 <h1>Contact us using the form below</h1>
-                <ContactForm />
+                <ContactForm formDetails={formDetails}/>
             </div>
             <div className="contactInfoContainer">
                 <h1>Contact Information</h1>

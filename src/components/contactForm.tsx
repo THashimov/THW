@@ -1,19 +1,20 @@
 import React, { useState } from "react";
+import EmailClass from "./emailClass";
 
 interface ContactFormProps {
-    
+    formDetails: React.MutableRefObject<EmailClass>
 }
  
-const ContactForm: React.FC<ContactFormProps> = () => {
-    const [firstName, setFirstName] = useState('');
-    const [surname, setSurname] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
-    const [message, setMessage] = useState('');
+const ContactForm: React.FC<ContactFormProps> = (prop) => {
 
+    const [firstName, setFirstName] = useState<string>('');
+    const [surname, setSurname] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [phone, setPhone] = useState<string>('');
+    const [message, setMessage] = useState<string>('');
 
-    const updateText = (e: React.ChangeEvent<HTMLInputElement>, arg: string) => {
-        const text = e.target.value;
+    const updateText = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>, arg: string) => {
+        const text: string = e.target.value;
 
         switch (arg) {
             case 'firstName':
@@ -28,20 +29,24 @@ const ContactForm: React.FC<ContactFormProps> = () => {
             case 'phone':
                 setPhone(text);
                 break;
+            case 'msg':
+                setMessage(text);
+                break;
         }
-    }
-
-    const updateMessage = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        setMessage(e.target.value);
+        
+        prop.formDetails.current.userName = firstName + ' ' + surname;
+        prop.formDetails.current.userEmail = email;
+        prop.formDetails.current.userPhone = phone;
+        prop.formDetails.current.message = message;
     }
 
     return (
-        <form id='contactForm' >
+        <form id='contactForm'>
             <input type='text' placeholder='First Name' value={firstName} onChange={(e) => {updateText(e, 'firstName')}} />
             <input type='text' placeholder='Surname' value={surname} onChange={(e) => {updateText(e, 'surname')}} />
             <input type='text' placeholder='Email' value={email} onChange={(e) => {updateText(e, 'email')}} />
             <input type='text' placeholder='Phone' value={phone} onChange={(e) => {updateText(e, 'phone')}} />
-            <textarea value={message} placeholder='Message' onChange={(e) => {updateMessage(e)}}/>
+            <textarea value={message} placeholder='Message' onChange={(e) => {updateText(e, 'msg')}}/>
         </form>
             );
 }

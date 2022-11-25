@@ -4,13 +4,14 @@ import Home from './components/home';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path = '/'
-        element = {<Home />}>
-          </Route>
-      </Routes>
-    </BrowserRouter>
+    <></>
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route exact path = '/'
+    //     element = {<Home />}>
+    //       </Route>
+    //   </Routes>
+    // </BrowserRouter>
   );
 }
 
